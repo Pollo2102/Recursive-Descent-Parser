@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ./../src/
+g++ -o UnitTests UnitTests.cpp Node.cpp Parser.cpp
+./UnitTests

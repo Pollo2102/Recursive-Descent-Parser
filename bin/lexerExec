@@ -1,0 +1,5 @@
+#!/bin/bash
+cd ./../src/
+flex -o lexer.cpp lexer.l
+gcc -o lexer.o lexer.cpp
+./lexer.o grammar.txt
