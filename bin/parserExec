@@ -1,2 +1,4 @@
 #!/bin/bash
 cd ./../src/
+g++ -o Parser Parser.cpp Node.cpp RecursiveDescentParser.cpp
+./Parser

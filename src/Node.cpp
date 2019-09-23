@@ -4,8 +4,9 @@
 
 Node::Node() {}
 
-Node::Node(std::initializer_list<Node> Nodes) 
+Node::Node(std::string sName, std::initializer_list<Node> Nodes) 
 {
+    stateName = sName;
     for(auto var : Nodes)
     {
         children.push_back(var);
@@ -22,19 +23,35 @@ Node::~Node()
 
 }
 
+//std::ostream& operator<<(std::ostream& out, Node node) { return out << node.getStateName(); }; 
+
 void Node::printAllNodes()
 {
-    std::cout << this << std::endl;
+    std::cout << stateName << std::endl;
     for (size_t i = 0; i < children.size(); i++)
     {
-        if (&this[i] != nullptr)
-        {
-            this[i].printAllNodes();
-        }
+        children.at(i).printAllNodes();
     }
+}
+
+std::string Node::getChildrenNames()
+{
+    std::string names;
+
+    for(auto var : children)
+    {
+        names += var.getStateName() + " ";
+    }
+
+    return names;
 }
 
 void Node::addChild(Node child)
 {
     children.push_back(child);
+}
+
+int Node::countChildren()
+{
+    return children.size();
 }

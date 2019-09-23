@@ -1,0 +1,21 @@
+
+STMT: COMPOUND_STMT
+    | WHILE_STMT
+    | IF_STMT
+    | EXPR_STMT
+    | RETURN_STMT
+
+EXPR_STMT: ID ID_OPTS ';'
+
+ID_OPTS: ASSIGN_STMT
+    | ID_OPT
+
+ASSIGN_STMT: '=' BEXPR 
+
+ID: 'id' ID_OPT
+
+ID_OPT: ':' 'id'
+    | '::' 'id'
+    | '(' PAR_LIST ')'
+    | %empty
+    

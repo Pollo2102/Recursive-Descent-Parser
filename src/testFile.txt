@@ -1,0 +1,17 @@
+int
+funcion
+int
+param
+{
+if
+(
+true
+)
+{
+int
+abc
+:=
+123
+;
+}
+}

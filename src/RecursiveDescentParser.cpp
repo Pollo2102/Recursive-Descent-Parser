@@ -1,8 +1,10 @@
+#include "Parser.h"
 
-
-int main(int argc, char const *argv[])
+int main()
 {
-    
+    Parser p;
+
+    p.parseGrammar("testFile.txt");
 
     return 0;
 }
